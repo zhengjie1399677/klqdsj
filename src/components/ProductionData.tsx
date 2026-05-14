@@ -83,10 +83,10 @@ function LiquidGauge({ percent, displayValue, label, size = 70, unit = "", color
 
 export function ProductionData() {
   const [stats, setStats] = useState({
-    today: { value: 1250, target: 1500 },
-    yesterday: { value: 1420, target: 1500 },
-    thisMonth: { value: 28500, target: 30000 },
-    lastMonth: { value: 42000, target: 45000 },
+    today: { value: 1250, target: 2200 },
+    yesterday: { value: 1420, target: 2800 },
+    thisMonth: { value: 28500, target: 45000 },
+    lastMonth: { value: 42000, target: 80000 },
   });
 
   useEffect(() => {
@@ -101,49 +101,60 @@ export function ProductionData() {
   }, []);
 
   return (
-    <div className="w-full h-full flex items-center justify-center px-2 pb-2">
-      <div className="w-[45%] flex items-center justify-center border-r border-blue-900/30 mr-2 pr-2">
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.1 }}
-        >
-          <LiquidGauge 
-            label="今日生产" 
-            displayValue={stats.today.value} 
-            percent={Math.min(100, Math.floor(stats.today.value / stats.today.target * 100))} 
-            size={100} 
-            unit="件"
-            colorType="purple"
-          />
-        </motion.div>
-      </div>
+    <div className="w-full h-full flex justify-center items-center gap-2 pb-2">
+      <motion.div 
+        className="flex items-center justify-end pr-2 pl-4"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.1 }}
+      >
+        <LiquidGauge 
+          label="今日生产" 
+          displayValue={stats.today.value} 
+          percent={Math.min(100, Math.floor(stats.today.value / stats.today.target * 100))} 
+          size={180} 
+          unit="件"
+          colorType="purple"
+        />
+      </motion.div>
 
-      <div className="w-[55%] flex flex-wrap justify-between gap-y-3 px-2">
-        <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }}>
+      <div className="flex flex-col justify-center items-start h-full py-4 gap-4 pr-4">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }} 
+          animate={{ opacity: 1, scale: 1 }} 
+          transition={{ delay: 0.2 }}
+        >
           <LiquidGauge 
             label="昨日" 
             displayValue={stats.yesterday.value} 
             percent={Math.min(100, Math.floor(stats.yesterday.value / stats.yesterday.target * 100))} 
-            size={55} 
+            size={60} 
           />
         </motion.div>
         
-        <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 }}>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }} 
+          animate={{ opacity: 1, scale: 1 }} 
+          transition={{ delay: 0.3 }}
+        >
           <LiquidGauge 
             label="本月累计" 
             displayValue={stats.thisMonth.value} 
             percent={Math.min(100, Math.floor(stats.thisMonth.value / stats.thisMonth.target * 100))} 
-            size={55} 
+            size={60} 
           />
         </motion.div>
         
-        <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4 }} className="w-full flex justify-center mt-1">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }} 
+          animate={{ opacity: 1, scale: 1 }} 
+          transition={{ delay: 0.4 }}
+        >
           <LiquidGauge 
             label="上月累计" 
             displayValue={stats.lastMonth.value} 
             percent={Math.min(100, Math.floor(stats.lastMonth.value / stats.lastMonth.target * 100))} 
-            size={55} 
+            size={60} 
           />
         </motion.div>
       </div>

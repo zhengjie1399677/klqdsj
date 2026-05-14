@@ -15,7 +15,7 @@ export default function App() {
     <div className="w-screen h-screen overflow-hidden flex flex-col p-4 gap-4">
       <header className="flex justify-between items-center text-center px-4 flex-shrink-0">
         <div className="flex-1 border-b border-blue-900/50 h-0" />
-        <h1 className="text-xl md:text-2xl font-bold font-mono tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 px-8 drop-shadow-md">
+        <h1 className="text-[35px] font-bold font-mono tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 px-8 drop-shadow-md">
           库伦旗现代农牧产业园大数据平台
         </h1>
         <div className="flex-1 border-b border-blue-900/50 h-0" />
