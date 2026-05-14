@@ -1,0 +1,6 @@
+{
+  "name": "库伦旗农牧产业园大数据平台",
+  "description": "库伦旗现代农牧产业园的大数据可视化看板，包含生产、原材料、订单、库存预警及车辆牛只等核心业务数据监控。",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
