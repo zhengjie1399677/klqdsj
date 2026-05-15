@@ -23,20 +23,20 @@ export default function App() {
 
       <div className="flex flex-1 gap-4 overflow-hidden">
         {/* Left Column (3 panels) */}
-        <div className="w-1/4 flex flex-col gap-3 h-full">
-          <Panel title="生产数据统计" className="flex-1">
+        <div className="w-1/4 flex flex-col gap-3 h-full min-h-0">
+          <Panel title="生产数据统计" className="flex-1 min-h-0">
             <ProductionData />
           </Panel>
-          <Panel title="原材料统计看板" className="flex-1">
+          <Panel title="原材料统计看板" className="flex-1 min-h-0">
             <RawMaterialStats />
           </Panel>
-          <Panel title="原材料使用和库存" className="flex-1">
+          <Panel title="原材料使用和库存" className="flex-1 min-h-0">
             <RawMaterialUsage />
           </Panel>
         </div>
 
         {/* Center Column (Top stats + Map + Vehicle Stats) */}
-        <div className="w-2/4 flex flex-col gap-3 h-full">
+        <div className="w-2/4 flex flex-col gap-3 h-full min-h-0">
           <div className="h-24 flex-shrink-0 relative">
             <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-cyan-500/50" />
             <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-cyan-500/50" />
@@ -61,14 +61,14 @@ export default function App() {
         </div>
 
         {/* Right Column (3 panels) */}
-        <div className="w-1/4 flex flex-col gap-3 h-full">
-          <Panel title="生产统计看板" className="flex-[0.6]">
+        <div className="w-1/4 flex flex-col gap-3 h-full min-h-0">
+          <Panel title="生产统计看板" className="flex-[0.6] min-h-0">
             <ProductionStats />
           </Panel>
-          <Panel title="订单量、派单量统计" className="flex-1">
+          <Panel title="订单量、派单量统计" className="flex-1 min-h-0">
             <OrderStats />
           </Panel>
-          <Panel title="销售总量统计" className="flex-1">
+          <Panel title="销售总量统计" className="flex-1 min-h-0">
             <SalesStats />
           </Panel>
         </div>
