@@ -1,25 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import { orderStats } from "@/src/data/mockData";
 
 export function OrderStats() {
   const [data, setData] = useState(orderStats);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setData(prev => ({
-        orders: [
-          { name: '已生产', value: Math.max(0, prev.orders[0].value + Math.floor(Math.random() * 6 - 3)), fill: '#0ea5e9' },
-          { name: '未生产', value: Math.max(0, prev.orders[1].value + Math.floor(Math.random() * 6 - 3)), fill: '#64748b' }
-        ],
-        dispatch: [
-          { name: '已派单', value: Math.max(0, prev.dispatch[0].value + Math.floor(Math.random() * 6 - 3)), fill: '#10b981' },
-          { name: '待派单', value: Math.max(0, prev.dispatch[1].value + Math.floor(Math.random() * 6 - 3)), fill: '#f59e0b' }
-        ]
-      }));
-    }, 4500);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <div className="flex w-full h-full">

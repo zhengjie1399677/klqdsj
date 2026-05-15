@@ -83,21 +83,14 @@ function LiquidGauge({ percent, displayValue, label, size = 70, unit = "", color
 
 export function ProductionData() {
   const [stats, setStats] = useState({
-    today: { value: 1250, target: 2200 },
-    yesterday: { value: 1420, target: 2800 },
-    thisMonth: { value: 28500, target: 45000 },
-    lastMonth: { value: 42000, target: 80000 },
+    today: { value: 56, target: 100 },
+    yesterday: { value: 48, target: 100 },
+    thisMonth: { value: 336, target: 500 },
+    lastMonth: { value: 0, target: 500 },
   });
 
   useEffect(() => {
-    const timer = setInterval(() => {
-       setStats(prev => ({
-           ...prev,
-           today: { ...prev.today, value: prev.today.value + Math.floor(Math.random() * 20) },
-           thisMonth: { ...prev.thisMonth, value: prev.thisMonth.value + Math.floor(Math.random() * 20) }
-       }));
-    }, 4500);
-    return () => clearInterval(timer);
+    // 静态数据展示
   }, []);
 
   return (
@@ -113,7 +106,7 @@ export function ProductionData() {
           displayValue={stats.today.value} 
           percent={Math.min(100, Math.floor(stats.today.value / stats.today.target * 100))} 
           size={180} 
-          unit="件"
+          unit="吨"
           colorType="purple"
         />
       </motion.div>

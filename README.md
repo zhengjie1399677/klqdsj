@@ -1,20 +1,77 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 库伦旗农牧产业园大数据平台
 
-# Run and deploy your AI Studio app
+这是一个为**库伦旗农牧产业园**设计开发的可视化大数据平台前端项目。项目采用了充满科技感的暗黑蓝色系（Data Visualization / Dashboard 风格），通过生动的图表和动画效果，全面展示了产业园的生产、物流、仓储和销售等关键数据。
 
-This contains everything you need to run your app locally.
+## 🌟 核心功能分区
 
-View your app in AI Studio: https://ai.studio/apps/eae3b911-0159-4e48-912c-727b6fb8a218
+本项目包含丰富的数据可视化模块，布局合理，层次分明：
 
-## Run Locally
+1. **生产数据统计**：采用动态水波纹球体（Liquid Gauge）展示今日、昨日、本月和上月的生产完成率及产量信息。
+2. **原材料统计看板**：带有 3D 柱状图动效的滚动列表，实时循环展示多达数十种原材料（如燕麦干草、玉米秸秆、豆粕等）的入库、出库与库存情况。
+3. **原材料使用和库存**：图表化展示各类原材料在生产过程中的消耗量与当前库存占比。
+4. **核心地图监控区**：位于大屏中央，以 3D 视角的内蒙古库伦旗地图为核心，辅以发货物流监控图表以及车辆状态统计（如：准备、路途中等等）。
+5. **生产统计看板**：展示不同类别的生产数据统计。
+6. **订单量、派单量统计**：提供每日订单的增长趋势分析及派单履约率。
+7. **销售总量统计**：统计多维度的销售业绩趋势情况。
 
-**Prerequisites:**  Node.js
+## 🛠 技术栈
 
+本项目基于现代化的前端技术栈构建，确保了高性能的表现以及丝滑的交互体验：
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **框架**：React 18
+- **构建工具**：Vite
+- **语言**：TypeScript
+- **样式**：Tailwind CSS (纯依靠 Utility Class 实现复杂且精致的暗黑科技质感大屏效果)
+- **图表库**：Recharts (轻量、易用且易于定制的 React 数据可视化图表库)
+- **动画与交互**：Framer Motion (实现各种丝滑的数据载入、区块入场及列表滚动动效)
+- **图标**：Lucide React
+
+## 🚀 启动与运行
+
+确保你已经安装了 `Node.js`。
+
+1. **安装依赖**
+   ```bash
+   npm install
+   ```
+
+2. **启动本地开发服务器**
+   ```bash
+   npm run dev
+   ```
+
+3. **构建生产版本**
+   ```bash
+   npm run build
+   ```
+
+## 📂 目录结构
+
+```text
+.
+├── src/
+│   ├── components/       # 所有具体的 UI 与可视化面板组件
+│   │   ├── LiquidGauge.tsx        # 自定义水波纹球组件
+│   │   ├── OrderStats.tsx         # 订单统计面板
+│   │   ├── Panel.tsx              # 通用边框/角标装饰面板组件
+│   │   ├── ProductionData.tsx     # 生产数据统计(水球)
+│   │   ├── RawMaterialStats.tsx   # 原材料 3D 滚动统计
+│   │   ├── ...以此类推
+│   ├── data/
+│   │   └── mockData.ts   # 大屏内使用的所有模拟数据源
+│   ├── App.tsx           # 大屏顶级布局控制器
+│   ├── index.css         # 引入 Tailwind 及大屏全局自定义样式
+│   └── main.tsx          # React 应用入口
+├── index.html            # HTML 入口
+├── tailwind.config.js    # Tailwind 配置文件
+└── vite.config.ts        # Vite 配置文件
+```
+
+## 🎨 设计亮点
+
+- **自适应与动态布局**：使用了 Flexbox 弹性布局控制三大列布局，中心放大，两翼呈信息辅助展示，严格控制了多分辨率下的 `overflow` 问题。
+- **色彩规范**：主背景使用深邃的径向渐变，辅以青色(Cyan)、蓝色(Blue)为基调的边框装饰线，对重要数据(Amber/Purple/Emerald)进行高对比度点缀，营造“赛博”或“航天”感的数据中心氛围。
+- **无缝滚动**：在 `RawMaterialStats.tsx` 中使用了 `popLayout` 与滑动队列算法，实现了无需额外插件即满足生产要求的高质量列表自动轮播滚动效果。
+
+---
+*本项目完全由 Google AI Studio 辅助生成并进行架构与逻辑优化。*

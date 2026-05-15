@@ -1,5 +1,6 @@
 import React from "react";
 import { Panel } from "@/src/components/ui/Panel";
+import { Meteors } from "@/src/components/ui/Meteors";
 import { ProductionStats } from "@/src/components/ProductionStats";
 import { OrderStats } from "@/src/components/OrderStats";
 import { SalesStats } from "@/src/components/SalesStats";
@@ -12,8 +13,9 @@ import { KulunMap } from "@/src/components/KulunMap";
 
 export default function App() {
   return (
-    <div className="w-screen h-screen overflow-hidden flex flex-col p-4 gap-4">
-      <header className="flex justify-between items-center text-center px-4 flex-shrink-0">
+    <div className="w-screen h-screen overflow-hidden flex flex-col p-4 gap-4 relative">
+      <Meteors number={30} />
+      <header className="flex justify-between items-center text-center px-4 flex-shrink-0 relative z-10">
         <div className="flex-1 border-b border-blue-900/50 h-0" />
         <h1 className="text-[35px] font-bold font-mono tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 px-8 drop-shadow-md">
           库伦旗现代农牧产业园大数据平台
@@ -21,7 +23,7 @@ export default function App() {
         <div className="flex-1 border-b border-blue-900/50 h-0" />
       </header>
 
-      <div className="flex flex-1 gap-4 overflow-hidden">
+      <div className="flex flex-1 gap-4 overflow-hidden relative z-10">
         {/* Left Column (3 panels) */}
         <div className="w-1/4 flex flex-col gap-3 h-full min-h-0">
           <Panel title="生产数据统计" className="flex-1 min-h-0">

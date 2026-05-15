@@ -22,18 +22,9 @@ const Html3DBar = ({ widthPercent, fill }: { widthPercent: number, fill: string 
 };
 
 export function RawMaterialStats() {
-  const [data, setData] = useState(rawMaterialInventoryStats);
-
-  useEffect(() => {
-     // Periodically update inventory to simulate changes
-     const updateTimer = setInterval(() => {
-        setData(prev => prev.map(item => ({
-            ...item,
-            inventory: Math.max(10, item.inventory + Math.floor(Math.random() * 100 - 50))
-        })));
-     }, 4000);
-     return () => clearInterval(updateTimer);
-  }, []);
+  const [data, setData] = useState(() => 
+    [...rawMaterialInventoryStats].sort((a, b) => (b.inbound + b.outbound) - (a.inbound + a.outbound))
+  );
 
   useEffect(() => {
     // Cycle through data - Sliding DOWN effect

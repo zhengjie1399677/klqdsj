@@ -114,23 +114,23 @@ export function KulunMap() {
               const isActive = i === activeIndex;
 
               return (
-                <g key={i} transform={`translate(${x}, ${y})`}>
+                  <g key={i} transform={`translate(${x}, ${y})`}>
                   {isActive && (
                       <>
                         <motion.circle
-                          r="25"
-                          fill="none"
-                          stroke="#34d399"
-                          strokeWidth="1.5"
+                          r="35"
+                          fill="rgba(126, 34, 206, 0.2)"
+                          stroke="#a855f7"
+                          strokeWidth="2"
                           initial={{ scale: 0, opacity: 0.8 }}
                           animate={{ scale: 1.5, opacity: 0 }}
                           transition={{ duration: 1.5, repeat: Infinity }}
                         />
                         <motion.circle
-                          r="15"
+                          r="20"
                           fill="none"
-                          stroke="#10b981"
-                          strokeWidth="2"
+                          stroke="#7e22ce"
+                          strokeWidth="2.5"
                           initial={{ scale: 0, opacity: 1 }}
                           animate={{ scale: 1.2, opacity: 0 }}
                           transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
@@ -138,16 +138,19 @@ export function KulunMap() {
                       </>
                   )}
                   {/* Inner Dot */}
-                  <circle r={isActive ? "6" : "4"} fill={isActive ? "#10b981" : "#3b82f6"} className={isActive ? "drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]" : ""} />
+                  <circle r={isActive ? "8" : "4"} fill={isActive ? "#7e22ce" : "#1e40af"} className={isActive ? "drop-shadow-[0_0_12px_rgba(126,34,206,1)]" : ""} />
                   
                   {/* Town Name */}
+                  {isActive && (
+                    <rect x="-45" y="-30" width="90" height="22" fill="rgba(6, 182, 212, 0.3)" stroke="#22d3ee" strokeWidth="1" rx="4" />
+                  )}
                   <text
                     y="-15"
                     textAnchor="middle"
                     fill={isActive ? "#fff" : "#cbd5e1"}
-                    fontSize={isActive ? "14" : "12"}
+                    fontSize={isActive ? "15" : "12"}
                     fontWeight={isActive ? "bold" : "normal"}
-                    className="drop-shadow-md transition-all duration-300 pointer-events-none"
+                    className={`drop-shadow-md transition-all duration-300 pointer-events-none ${isActive ? 'drop-shadow-[0_0_5px_#22d3ee]' : ''}`}
                   >
                     {town.name}
                   </text>
@@ -166,21 +169,21 @@ export function KulunMap() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.5 }}
-            className="absolute bottom-4 right-4 w-52 bg-blue-900/10 backdrop-blur-sm border border-cyan-500/30 p-3 rounded text-sm shadow-none pointer-events-none"
+            className="absolute bottom-4 right-4 w-60 bg-blue-900/30 backdrop-blur-md border-[1.5px] border-cyan-400/60 p-4 rounded-lg shadow-[0_0_20px_rgba(34,211,238,0.2)] pointer-events-none"
           >
-            <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-cyan-400" />
-            <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-cyan-400" />
-            <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-cyan-400" />
-            <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-cyan-400" />
+            <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-cyan-300 rounded-tl-lg" />
+            <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-cyan-300 rounded-tr-lg" />
+            <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-cyan-300 rounded-bl-lg" />
+            <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-cyan-300 rounded-br-lg" />
 
-            <div className="flex items-center gap-2 mb-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                <h4 className="text-cyan-300 font-bold text-sm tracking-widest">{activeTown.name}</h4>
+            <div className="flex items-center gap-2 mb-3 border-b border-cyan-500/30 pb-2">
+                <div className="w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_8px_#67e8f9] animate-pulse" />
+                <h4 className="text-cyan-200 font-bold text-[15px] tracking-widest">{activeTown.name}</h4>
             </div>
             
-            <div className="space-y-1 text-slate-200 font-normal">
+            <div className="space-y-1.5 text-slate-100 font-medium">
                 {activeTown.value[1].toString().split('\n').map((line, idx) => (
-                    <p key={idx} className="leading-relaxed text-[11px]">{line}</p>
+                    <p key={idx} className="leading-relaxed text-[12px] whitespace-pre-wrap">{line}</p>
                 ))}
             </div>
           </motion.div>

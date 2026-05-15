@@ -3,21 +3,14 @@ import { motion } from 'motion/react';
 
 export function CenterTopMetrics() {
   const [metrics, setMetrics] = useState([
-    { label: "本年度总产值 (万元)", value: 12450 },
-    { label: "平台活跃用户数", value: 3892 },
-    { label: "累计处理订单 (单)", value: 85620 },
-    { label: "安全运行天数", value: 1245 }
+    { label: "占地面积 (亩)", value: 90 },
+    { label: "育肥牛 (头)", value: 2000 },
+    { label: "TMR生产规模 (万吨)", value: 15 },
+    { label: "中央厨房生产线 (吨)", value: 500 }
   ]);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-       setMetrics(m => m.map((item, idx) => {
-           if (idx === 3) return item;
-           const change = Math.floor(Math.random() * 5);
-           return { ...item, value: item.value + change };
-       }));
-    }, 4000);
-    return () => clearInterval(timer);
+    // 静止数据展示
   }, []);
 
   return (

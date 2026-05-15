@@ -1,45 +1,40 @@
 // Mock Data for the Dashboard
 
 export const productionStats = {
-  today: { production: 120, inbound: 110, outbound: 85 },
-  yesterday: { production: 115, inbound: 105, outbound: 90 },
-  thisMonth: { production: 3600, inbound: 3500, outbound: 3200 },
-  lastMonth: { production: 3400, inbound: 3300, outbound: 3100 },
+  today: { production: 63, inbound: 42, outbound: 37 },
+  yesterday: { production: 58, inbound: 32, outbound: 47 },
+  thisMonth: { production: 336, inbound: 275, outbound: 181 },
+  lastMonth: { production: 0, inbound: 0, outbound: 0 },
 };
 
 export const rawMaterialInventoryStats = [
-  { name: '玉米', inbound: 4000, outbound: 3800, inventory: 1200 },
-  { name: '大豆', inbound: 3000, outbound: 2800, inventory: 800 },
-  { name: '豆粕', inbound: 2000, outbound: 1900, inventory: 500 },
-  { name: '玉米秸秆', inbound: 5000, outbound: 4500, inventory: 2000 },
-  { name: '添加剂', inbound: 500, outbound: 400, inventory: 150 },
-  { name: '稻草', inbound: 3200, outbound: 3000, inventory: 1100 },
-  { name: '麦麸', inbound: 1500, outbound: 1400, inventory: 450 },
-  { name: '高粱', inbound: 2800, outbound: 2600, inventory: 900 },
-  { name: '棉籽粕', inbound: 1200, outbound: 1100, inventory: 300 },
-  { name: '菜籽粕', inbound: 1800, outbound: 1700, inventory: 600 },
-  { name: '花生粕', inbound: 900, outbound: 800, inventory: 200 },
-  { name: '苜蓿草', inbound: 4500, outbound: 4200, inventory: 1800 },
-  { name: '燕麦干草', inbound: 3600, outbound: 3400, inventory: 1300 },
-  { name: '氨基酸', inbound: 200, outbound: 180, inventory: 50 },
-  { name: '维生素', inbound: 150, outbound: 140, inventory: 40 },
-  { name: '骨粉', inbound: 800, outbound: 750, inventory: 150 },
-  { name: '鱼粉', inbound: 600, outbound: 550, inventory: 100 },
-  { name: '石粉', inbound: 400, outbound: 380, inventory: 120 },
-  { name: '食盐', inbound: 300, outbound: 280, inventory: 80 },
-  { name: '酵母粉', inbound: 250, outbound: 230, inventory: 90 },
-  { name: '预混料', inbound: 1100, outbound: 1000, inventory: 400 },
-  { name: '青贮饲料', inbound: 8000, outbound: 7500, inventory: 3500 },
-  { name: '葵花籽粕', inbound: 1300, outbound: 1200, inventory: 350 },
-  { name: 'DDGS', inbound: 2400, outbound: 2200, inventory: 850 },
-  { name: '甜菜粕', inbound: 1700, outbound: 1600, inventory: 550 },
+  { name: '玉米粒', inbound: 2580, outbound: 1380, inventory: 1200 },
+  { name: '喷浆玉米皮', inbound: 1380, outbound: 580, inventory: 800 },
+  { name: '棉籽粕', inbound: 650, outbound: 570, inventory: 80 },
+  { name: '全株玉米', inbound: 700, outbound: 0, inventory: 700 },
+  { name: '菜粕', inbound: 330, outbound: 190, inventory: 140 },
+  { name: '棉粕', inbound: 120, outbound: 100, inventory: 20 },
+  { name: '棕榈粕', inbound: 240, outbound: 60, inventory: 180 },
+  { name: 'DDGS', inbound: 100, outbound: 75, inventory: 25 },
+  { name: '豆粕', inbound: 350, outbound: 150, inventory: 200 },
+  { name: '板清颗粒', inbound: 480, outbound: 310, inventory: 170 },
+  { name: '稻草', inbound: 360, outbound: 270, inventory: 90 },
+  { name: '盐砖（块）', inbound: 200, outbound: 184, inventory: 16 },
+  { name: '麦秸', inbound: 3550, outbound: 3340, inventory: 210 },
+  { name: '玉米秸秆', inbound: 2800, outbound: 2670, inventory: 130 },
+  { name: '燕麦草', inbound: 390, outbound: 320, inventory: 70 },
+  { name: '青干草', inbound: 240, outbound: 40, inventory: 200 },
+  { name: '苏打', inbound: 50, outbound: 42, inventory: 8 },
+  { name: '全混合精料', inbound: 650, outbound: 340, inventory: 310 },
+  { name: '酵母', inbound: 100, outbound: 82, inventory: 18 },
+  { name: '全棉籽', inbound: 350, outbound: 180, inventory: 170 },
 ];
 
 export const rawMaterialUsageStats = [
-  { time: '第一季', usage: 12000, inventory: 5000 },
-  { time: '第二季', usage: 14000, inventory: 4500 },
-  { time: '第三季', usage: 13500, inventory: 4800 },
-  { time: '第四季', usage: 15000, inventory: 4650 },
+  { time: '一季度', usage: 0, inventory: 0 },
+  { time: '二季度', usage: 10883, inventory: 4737 },
+  { time: '三季度', usage: 0, inventory: 0 },
+  { time: '四季度', usage: 0, inventory: 0 },
 ];
 
 export const productionDataTrend = [
@@ -53,23 +48,21 @@ export const productionDataTrend = [
 
 export const orderStats = {
   orders: [
-    { name: '已生产', value: 65, fill: '#0ea5e9' },
-    { name: '未生产', value: 35, fill: '#64748b' },
+    { name: '已生成', value: 3, fill: '#0ea5e9' },
+    { name: '未生产', value: 1, fill: '#64748b' },
   ],
   dispatch: [
-    { name: '已派单', value: 80, fill: '#10b981' },
-    { name: '待派单', value: 20, fill: '#f59e0b' },
+    { name: '已派单', value: 5, fill: '#10b981' },
+    { name: '待派单', value: 2, fill: '#f59e0b' },
   ],
 };
 
 export const salesTrend = [
-  { time: '周一', sales: 120 },
-  { time: '周二', sales: 135 },
-  { time: '周三', sales: 125 },
-  { time: '周四', sales: 150 },
-  { time: '周五', sales: 170 },
-  { time: '周六', sales: 210 },
-  { time: '周日', sales: 190 },
+  { time: '当日销售', sales: 42 },
+  { time: '本周累计', sales: 117 },
+  { time: '本月累计', sales: 173 },
+  { time: '本季度累计', sales: 173 },
+  { time: '本年累计', sales: 173 },
 ];
 
 export const inventoryAlerts = [
@@ -80,17 +73,13 @@ export const inventoryAlerts = [
   { id: 5, type: 'warning', item: '玉米', message: '近期消耗加快，建议补货', time: '2天前' },
 ];
 
-export const vehicleCattleStats = {
-  summary: {
-    totalVehiclesToday: 128,
-    totalCattleToday: 450,
-  },
-  trend: [
-    { time: '08:00', vehicles: 12, cattle: 40 },
-    { time: '10:00', vehicles: 25, cattle: 80 },
-    { time: '12:00', vehicles: 15, cattle: 20 },
-    { time: '14:00', vehicles: 30, cattle: 120 },
-    { time: '16:00', vehicles: 28, cattle: 150 },
-    { time: '18:00', vehicles: 18, cattle: 40 },
-  ]
-};
+export const vehicleCattleTrend = [
+  { time: '第一周', vehicles: 8, cattle: 20 },
+  { time: '第二周', vehicles: 12, cattle: 35 },
+  { time: '第三周', vehicles: 6, cattle: 18 },
+  { time: '第四周', vehicles: 11, cattle: 26 },
+  { time: '第五周', vehicles: 7, cattle: 22 },
+  { time: '第六周', vehicles: 9, cattle: 28 },
+  { time: '第七周', vehicles: 13, cattle: 30 },
+  { time: '第八周', vehicles: 10, cattle: 19 },
+];

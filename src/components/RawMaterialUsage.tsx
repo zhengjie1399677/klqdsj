@@ -1,25 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import { rawMaterialUsageStats } from "@/src/data/mockData";
 
 export function RawMaterialUsage() {
-  const [data, setData] = useState(rawMaterialUsageStats);
-
-  useEffect(() => {
-     const timer = setInterval(() => {
-        setData(prev => prev.map(item => ({
-            ...item,
-            usage: Math.max(1000, item.usage + Math.floor(Math.random() * 400 - 200)),
-            inventory: Math.max(1000, item.inventory + Math.floor(Math.random() * 300 - 150)),
-        })));
-     }, 4500);
-     return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="w-full h-full min-h-0">
       <ResponsiveContainer width="100%" height="100%">
-        <AreaChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: -5 }}>
+        <AreaChart data={rawMaterialUsageStats} margin={{ top: 10, right: 10, left: -20, bottom: -5 }}>
           <defs>
             <linearGradient id="colorUsage" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.4}/>
