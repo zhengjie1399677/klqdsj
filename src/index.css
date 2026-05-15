@@ -36,27 +36,3 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #60a5fa;
 }
-
-@keyframes meteor {
-  0% {
-    transform: rotate(115deg) translateX(0);
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(115deg) translateX(250vw);
-    opacity: 0;
-  }
-}
-
-.meteor-animation {
-  animation-name: meteor;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  opacity: 0;
-}

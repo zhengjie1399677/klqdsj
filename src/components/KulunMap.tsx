@@ -119,8 +119,8 @@ export function KulunMap() {
                       <>
                         <motion.circle
                           r="35"
-                          fill="rgba(126, 34, 206, 0.2)"
-                          stroke="#a855f7"
+                          fill="rgba(52, 211, 153, 0.2)"
+                          stroke="#34d399"
                           strokeWidth="2"
                           initial={{ scale: 0, opacity: 0.8 }}
                           animate={{ scale: 1.5, opacity: 0 }}
@@ -129,7 +129,7 @@ export function KulunMap() {
                         <motion.circle
                           r="20"
                           fill="none"
-                          stroke="#7e22ce"
+                          stroke="#10b981"
                           strokeWidth="2.5"
                           initial={{ scale: 0, opacity: 1 }}
                           animate={{ scale: 1.2, opacity: 0 }}
@@ -138,7 +138,7 @@ export function KulunMap() {
                       </>
                   )}
                   {/* Inner Dot */}
-                  <circle r={isActive ? "8" : "4"} fill={isActive ? "#7e22ce" : "#1e40af"} className={isActive ? "drop-shadow-[0_0_12px_rgba(126,34,206,1)]" : ""} />
+                  <circle r={isActive ? "8" : "4"} fill={isActive ? "#34d399" : "#3b82f6"} className={isActive ? "drop-shadow-[0_0_12px_rgba(52,211,153,1)]" : ""} />
                   
                   {/* Town Name */}
                   {isActive && (
